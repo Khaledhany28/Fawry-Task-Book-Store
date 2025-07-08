@@ -1,4 +1,6 @@
 # 📚 BookStore Management System
+---
+To be honest i used chatgpt to create the readme file
 
 A simple yet structured **Python Bookstore Management System** that handles multiple book types, customer shopping carts, inventory operations, and checkout with shipping and emailing services.
 
