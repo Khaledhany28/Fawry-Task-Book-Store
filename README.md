@@ -110,7 +110,7 @@ main/test_bookstore.py      # Testing suite
 
 ### 📸 Sample Output
 
-![Output screenshot](screenshots\test_output.png)
+![Output screenshot](screenshots/test_output.png)
 
 ---
 
