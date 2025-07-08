@@ -19,6 +19,7 @@ class Book(ABC):
     def __str__(self):
         return f"{self.title} by {self.author}, ISBN: {self.isbn}"
 
+# Getters for Book attributes
     def get_isbn(self):
         return self.isbn
     def get_title(self):

@@ -9,19 +9,12 @@ class BookStore:
 
     def add_book(self, book: Book):
 
-
-
-
         # Check if the book is already in the inventory and its a PaperBook then increment stock
         if isinstance(book, PaperBook):
             existing_book = self.inventory.get(book.isbn, None)
             if existing_book:
                 existing_book.stock += book.stock
                 return
-            
-
-
-
 
         # Check if the book already exists in the inventory
         if book.isbn in self.inventory:
@@ -49,6 +42,7 @@ class BookStore:
                 del self.inventory[isbn]
 
         return removed_books
+    
     
     def checkout(self, customer: Customer):
         if not isinstance(customer, Customer):

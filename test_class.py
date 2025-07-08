@@ -22,13 +22,15 @@ class TestBookStore:
         
 
         self.store.add_books(self.books.values())
+        print("Books added to the store:")
         self.store.list_books()
+        print("\n")
 
     def test_remove_outdated_books(self):
         # Assuming the current year is 2023
         removed_books = self.store.remove_outdated_books(2)
         assert len(removed_books) == 2, "Should remove 2 outdated books"
-        print("Removed outdated books:", removed_books)
+        print("Removed outdated books:", removed_books, "\n")
     
     def test_checkout(self):
         self.customer.cart.add(self.books["Book4"], 2)  # PaperBook
@@ -44,7 +46,10 @@ class TestBookStore:
         self.test_add_books()
         self.test_remove_outdated_books()
         self.test_checkout()
+        print("\n\tInventory after checkout:")
         self.test_list_books()
+        print("\n\tCustomer's cart after checkout:")
+        print("Cart: ", self.customer.cart.items)
         print("All tests passed!")
 
 
