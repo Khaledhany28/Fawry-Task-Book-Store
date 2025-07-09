@@ -1,13 +1,11 @@
-from abc import ABC, abstractmethod
 from enum import Enum
-from datetime import datetime
 
 class BookTypes(Enum):
     PAPER = "Paper"
     EBOOK = "Ebook"
     SHOWCASE = "Showcase"
 
-class Book(ABC):
+class Book():
     def __init__(self, isbn: str, title: str, year: int, price: float, author: str, book_type: BookTypes):
         self.isbn = isbn
         self.title = title
