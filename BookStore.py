@@ -86,7 +86,25 @@ class BookStore:
             elif isinstance(book, ShowcaseBook):
                 raise ValueError("Showcase books cannot be purchased directly.")
 
-        
+        print("\n")
+        # Display Receipt
+        print("=" * 40)
+        print("🧾 Receipt".center(40))
+        print("=" * 40)
+        print(f"Customer: {customer.name}")
+        print("-" * 40)
+        print(f"{'Item':<20}{'Qty':>5}{'Price':>15}")
+        print("-" * 40)
+
+        for cart_book, cart_quantity in customer.cart.items.values():
+            line_total = cart_book.price * cart_quantity
+            print(f"{cart_book.title:<20}{cart_quantity:>5}{line_total:>15.2f}")
+
+        print("-" * 40)
+        print(f"{'Total Charged:':<25}${(cart_total_price):>10.2f}")
+        print(f"{'Balance After Checkout:':<25}${(customer.balance - cart_total_price):>10.2f}")
+        print("=" * 40)
+        print("\n")
         
         # Deduct the total price from the customer's balance
         customer.balance -= cart_total_price
